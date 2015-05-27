@@ -1,0 +1,37 @@
+Git Commands:
+
+git add "filename"
+
+git push -u origin master
+
+git commit -m "First commit"
+
+git fetch origin
+
+git remote show origin
+
+git reset --hard origin/master
+
+generate new key:
+
+ssh-keygen -t rsa -C "guillaug-osu@github.com"
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_rsa
+
+cat ~/.ssh/id_rsa.pub
+
+Git workflow (for each separate file):
+
+make changes
+add file
+commit changes
+push changes
+
+
+git remote add origin https://github.com/guillaug-osu/assignment4-part1
+
+git pull remotename branchname
+
+git log --pretty=format:"Start: %nEnd: %ad %nTasks: %s" --date=rfc
