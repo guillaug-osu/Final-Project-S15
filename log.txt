@@ -1,58 +1,9 @@
 Start: 
-End: Thu, 7 May 2015 15:51:41 +0000 
-Tasks: Added javascript files for bootstrap validator
+End: Wed, 27 May 2015 01:50:11 +0000 
+Tasks: Added git commands file
 Start: 
-End: Thu, 7 May 2015 15:51:14 +0000 
-Tasks: Added bootstrap validator css file
+End: Wed, 27 May 2015 01:49:49 +0000 
+Tasks: created log file
 Start: 
-End: Thu, 7 May 2015 15:50:47 +0000 
-Tasks: Added files to remove one row, remove all rows, check if title is available, and checkout title
-Start: 
-End: Thu, 7 May 2015 15:48:35 +0000 
-Tasks: Fixed functionality for add, checkout and delete buttons
-Start: 
-End: Thu, 7 May 2015 03:44:43 +0000 
-Tasks: Added delete all button
-Start: 
-End: Thu, 7 May 2015 03:34:54 +0000 
-Tasks: Fixed sql insert statement
-Start: 
-End: Thu, 7 May 2015 03:34:17 +0000 
-Tasks: Fixed ajax call to mysql database
-Start: 
-End: Thu, 7 May 2015 00:47:47 +0000 
-Tasks: Added work done with buttons
-Start:
-End: Thu, 7 May 2015 00:44:51 +0000 
-Tasks: Fixed checkout and delete buttons
-Start: 
-End: Wed, 6 May 2015 18:02:13 +0000 
-Tasks: changed if statement in render function
-Start: 
-End: Wed, 6 May 2015 17:59:10 +0000 
-Tasks: fixed sql query
-Start: 
-End: Wed, 6 May 2015 17:49:59 +0000 
-Tasks: added data from database
-Start: 
-End: Wed, 6 May 2015 17:07:03 +0000 
-Tasks: added Lion King movie
-Start: 
-End: Wed, 6 May 2015 16:59:00 +0000 
-Tasks: Created skeleton videos page with table
-Start: 
-End: Wed, 6 May 2015 14:21:51 +0000 
-Tasks: Added first work done
-Start: 
-End: Wed, 6 May 2015 14:20:01 +0000 
-Tasks: created scripts folder
-Start: 
-End: Wed, 6 May 2015 14:16:12 +0000 
-Tasks: Created fonts folder
-Start: 
-End: Wed, 6 May 2015 14:14:50 +0000 
-Tasks: created css folder
-Start: 
-End: Wed, 6 May 2015 13:14:28 +0000 
-Tasks: Created log.txt file
-Start: 
+End: Tue, 26 May 2015 21:39:43 -0400 
+Tasks: Initial commit
