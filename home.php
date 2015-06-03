@@ -27,27 +27,35 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                  <li><a href="#">Link</a></li>
+                  <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
                   <li class="dropdown">
-                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Team <span class="caret"></span></a>
                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Depth Chart</a></li>
+                        <li><a href="#">Statistics</a></li>
+                        <li><a href="#">Coaching Staff</a></li>
+                        <li><a href="#">Front Office</a></li>
+                     </ul>
+                  </li>
+                     <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Player Management <span class="caret"></span></a>
+                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">My Team</a></li>
+                        <li><a href="#">Transactions</a></li>
+                        <li><a href="#">Free Agents</a></li>
+                        <li><a href="#">Trade Players</a></li>
+                     </ul>
+                  </li>
+                                       <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Around the League <span class="caret"></span></a>
+                     <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Players List</a></li>
+                        <li><a href="#">League Leaders</a></li>
+                        <li><a href="#">Injuries</a></li>
+                        <li><a href="#">Standings</a></li>
                      </ul>
                   </li>
                </ul>
-               <form class="navbar-form navbar-left" role="search">
-                  <div class="form-group">
-                     <input type="text" class="form-control" placeholder="Search">
-                  </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-               </form>
                <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Help<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
