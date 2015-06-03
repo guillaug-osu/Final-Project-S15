@@ -1,0 +1,65 @@
+
+@font-face {
+    font-family:"Academic";
+    src: url("../fonts/AcademicM54.ttf") /* TTF file for CSS3 browsers */
+}
+
+
+@font-face {
+    font-family: "OpenSans-Light";
+    src: url('/current/fonts/OpenSans-Light.ttf');
+}
+
+body
+{
+    background-color: #F7F7F7;
+    font-family:"Academic";
+}
+
+
+.slider-container
+{
+    width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slide
+{
+    width: 700px;
+    margin: 0 auto;
+    float: left;
+    overflow: hidden;
+    font-size: 15px;
+    text-align: center;
+}
+#slider-wrapper
+{
+    width: 2100px;
+}
+
+form
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.scrollable-list {
+    height: auto;
+    max-height: 500px;
+    overflow-x: hidden;
+}
+
+.info
+{
+    display: none;
+}
+
+.team p
+{
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.team .img-responsive {
+    margin: 0 auto;
+}
