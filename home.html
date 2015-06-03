@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
    <head>
-         <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Legends League</title>
-      <link rel="icon" type="image/png" href="favicon.ico">
-      <link href="../Legends-New/StyleSheets/bootstrap.css" rel="stylesheet">
-      <link href="../Legends-New/StyleSheets/bootstrapValidator.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../Legends-New/StyleSheets/style.css" />
-      <script src="../Legends-New/Scripts/jquery-1.9.1.min.js" type="text/javascript"></script> 
-      <script src="../Legends-New/Scripts/bootstrap.min.js" type="text/javascript"></script>
-      <script src="../Legends-New/Scripts/bootstrapValidator.min.js" type="text/javascript"></script>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Oregon State Fantasy Sports</title>
+      <link rel="stylesheet" href="../Final-Project-S15/css/bootstrap.css">
+      <link rel="stylesheet" href="../Final-Project-S15/css/bootstrapValidator.min.css">
+      <link rel="stylesheet" href="../Final-Project-S15/css/style.css"/>
+      <script type="text/javascript" src="../Final-Project-S15/scripts/jquery-1.9.1.min.js"></script> 
+      <script type="text/javascript" src="../Final-Project-S15/scripts/bootstrap.min.js"></script>
+      <script type="text/javascript" src="../Final-Project-S15/scripts/bootstrapValidator.min.js"></script>
    </head>
    <body>
-         <div class="container">
+      <div class="container">
+         <h1 class="text-center"><span style="color: red;">Oregon State </span><span style="color: black;">Fantasy Sports</span></h1>
          <div class="slider-container">
             <div id="slider-wrapper">
                <div class="slide">
-                  <h1><span style="color: red;">Oregon State</span><span style="color: black;">Fantasy Sports</span></h1>
-                           <h4 style="text-align: center;">Sign Up Today!</h4>
+                  <h4 style="text-align: center;">Sign Up Today!</h4>
                   <form id="registrationForm" class="form-horizontal"             data-bv-message="This value is not valid"
                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
                      <div class="form-group">
-                        <label class="col-xs-4 control-label">Full name</label>
+                        <label class="col-xs-4 control-label">First name</label>
                         <div class="col-xs-8">
-                           <input type="text" class="form-control name" name="fullname" placeholder="Full name" data-bv-notempty data-bv-notempty-message="You're required to fill in a first name!" />
+                           <input type="text" class="form-control name" name="firstname" placeholder="First name" data-bv-notempty data-bv-notempty-message="You're required to fill in a first name!" />
                         </div>
                      </div>
-                                          <div class="form-group">
+                     <div class="form-group">
+                        <label class="col-xs-4 control-label">Last name</label>
+                        <div class="col-xs-8">
+                           <input type="text" class="form-control name" name="lastname" placeholder="Last name" data-bv-notempty data-bv-notempty-message="You're required to fill in a last name!" />
+                        </div>
+                     </div>
+                     <div class="form-group">
                         <label class="col-xs-4 control-label">Username</label>
                         <div class="col-xs-8">
                            <input type="text" class="form-control name" name="username" placeholder="username" data-bv-notempty data-bv-notempty-message="Username required!" />
@@ -39,7 +44,8 @@
                      <div class="form-group">
                         <label class="col-xs-4 control-label">Email address</label>
                         <div class="col-xs-8">
-                           <input type="email" class="form-control" id="email" name="email" placeholder="me@email.com"  data-bv-notempty data-bv-notempty-message="An email address is mandatory"/>
+                           <input type="email"  class="form-control" id="email" name="email" placeholder="me@email.com"  data-bv-notempty data-bv-notempty-message="An email address is mandatory"/>
+                           <input type="hidden" class="form-control" id="team-name" name="team" placeholder="team" value=""/>
                         </div>
                      </div>
                      <div class="form-group">
@@ -48,9 +54,15 @@
                            <input type="password" class="form-control" name="password" placeholder="Password" data-bv-notempty data-bv-notempty-message="Password required!" />
                         </div>
                      </div>
+                     <div class="form-group">
+                        <label class="col-xs-4 control-label">Retype Password</label>
+                        <div class="col-xs-8">
+                           <input type="password" class="form-control" name="password" placeholder="Password" data-bv-notempty data-bv-notempty-message="Password required!" />
+                        </div>
+                     </div>
                      <div class="form-group" style="float: right;">
                         <div class="col-xs-5">
-                           <button type="button" class="btn btn-primary" name="login" value="Login">Login</button>
+                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#log" name="login" value="Login">Login</button>
                         </div>
                         <div class="col-xs-3">
                            <button type="submit" class="btn btn-danger"  name="signup" value="Sign up">Sign-Up</button>
@@ -58,101 +70,413 @@
                      </div>
                   </form>
                </div>
-                              <div class="slide" id="team">
-                  <h1>Pick a Team</h1>
-                  <div class="dropdown">
-                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                     Teams
-                     <span class="caret"></span>
-                     </button>
-                     <ul class="dropdown-menu scrollable-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu">
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Arizona Cardinals	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Atlanta Falcons	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Baltimore Ravens	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Buffalo Bills	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Carolina Panthers	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Chicago Bears	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Cincinnati Bengals	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Cleveland Browns	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Dallas Cowboys	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Denver Broncos	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Detroit Lions	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Green Bay Packers	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Houston Texans	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Indianapolis Colts	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Jacksonville Jaguars	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Kansas City Chiefs	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Miami Dolphins	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Minnesota Vikings	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	New England Patriots	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	New Orleans Saints	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	New York Giants	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	New York Jets	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Oakland Raiders	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Philadelphia Eagles	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Pittsburgh Steelers	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	San Diego Chargers	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	San Francisco 49ers	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Seattle Seahawks	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	St. Louis Rams	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Tampa Bay Buccaneers	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Tennessee Titans	</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">	Washington Redskins	</a></li>
-                     </ul>
+               <div class="slide" id="team">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <h1>Pick a Team</h1>
+                     </div>
                   </div>
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="list-group scrollable-list">
+                           <a href="#" class="list-group-item active" name="1">Arizona Cardinals</a>
+                           <a href="#" class="list-group-item" name="2">Atlanta Falcons</a>
+                           <a href="#" class="list-group-item" name="3">Baltimore Ravens</a>
+                           <a href="#" class="list-group-item" name="4">Buffalo Bills</a>
+                           <a href="#" class="list-group-item" name="5">Carolina Panthers</a>
+                           <a href="#" class="list-group-item" name="6">Chicago Bears</a>
+                           <a href="#" class="list-group-item" name="7">Cincinnati Bengals</a>
+                           <a href="#" class="list-group-item" name="8">Cleveland Browns</a>
+                           <a href="#" class="list-group-item" name="9">Dallas Cowboys</a>
+                           <a href="#" class="list-group-item" name="10">Denver Broncos</a>
+                           <a href="#" class="list-group-item" name="11">Detroit Lions</a>
+                           <a href="#" class="list-group-item" name="12">Green Bay Packers</a>
+                           <a href="#" class="list-group-item" name="13">Houston Texans</a>
+                           <a href="#" class="list-group-item" name="14">Indianapolis Colts</a>
+                           <a href="#" class="list-group-item" name="15">Jacksonville Jaguars</a>
+                           <a href="#" class="list-group-item" name="16">Kansas City Chiefs</a>
+                           <a href="#" class="list-group-item" name="17">Miami Dolphins</a>
+                           <a href="#" class="list-group-item" name="18">Minnesota Vikings</a>
+                           <a href="#" class="list-group-item" name="19">New England Patriots</a>
+                           <a href="#" class="list-group-item" name="20">New Orleans Saints</a>
+                           <a href="#" class="list-group-item" name="21">New York Giants</a>
+                           <a href="#" class="list-group-item" name="22">New York Jets</a>
+                           <a href="#" class="list-group-item" name="23">Oakland Raiders</a>
+                           <a href="#" class="list-group-item" name="24">Philadelphia Eagles</a>
+                           <a href="#" class="list-group-item" name="25">Pittsburgh Steelers</a>
+                           <a href="#" class="list-group-item" name="26">San Diego Chargers</a>
+                           <a href="#" class="list-group-item" name="27">San Francisco 49ers</a>
+                           <a href="#" class="list-group-item" name="28">Seattle Seahawks</a>
+                           <a href="#" class="list-group-item" name="29">St. Louis Rams</a>
+                           <a href="#" class="list-group-item" name="30">Tampa Bay Buccaneers</a>
+                           <a href="#" class="list-group-item" name="31">Tennessee Titans</a>
+                           <a href="#" class="list-group-item" name="32">Washington Redskins</a>
+                        </div>
+                     </div>
+                     <div class="col-md-8 team">
+                        <h1 class="text-center" id="teamname"></h1>
+                        <p class="text-center" id="record"></p>
+                        <p class="text-center" id="salary"></p>
+                        <img src="" class="img-responsive text-center" id="logo" alt="Responsive image" height="200" width="200">
+                        <p class="text-center" id="overall"></p>
+                        <p class="text-center" id="coach"></p>
+                        <button type="button" class="btn btn-primary" name="finish" onclick="NextSlide()" value="Upload Avatar!">Upload Avatar!</button>
+                     </div>
+                  </div>
+               </div>
+               <div class="slide text-center">
+                  <form enctype="multipart/form-data" id="photo" data-bv-message="This value is not valid"
+                     data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                     data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                     data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                     <div class="form-group">
+                        <label for="avatar">Image upload</label>
+                        <input type="file" class="form-control" id="avatar" name="avatar" />
+                        <p class="help-block">Upload a profile avatar.</p>
+                     </div>
+                     <button type="submit"  class="btn btn-primary" id="Upload">Upload</button>
+                  </form>
                </div>
             </div>
          </div>
+      </div>
+      <div class="modal fade" id="log" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Log-in to your profile</h4>
+               </div>
+               <div class="modal-body">
+                  <form enctype="multipart/form-data" id="login" data-bv-message="This value is not valid"
+                     data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                     data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                     data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                     <div class="form-group">
+                        <label for="name">username</label>
+                        <input type="text" class="form-control" id="username" placeholder="username" data-bv-notempty data-bv-notempty-message="Username required!" name="username">
+                     </div>
+                     <div class="form-group">
+                        <label for="password">password</label>
+                        <input type="password" class="form-control" id="password" placeholder="password" data-bv-notempty data-bv-notempty-message="Password required!" name="password">
+                     </div>
+                     <button type="button" class="btn btn-default" data-dismiss="modal" onclick="dismiss()">Close</button>
+                     <button type="submit"  class="btn btn-primary" id="submit">Login</button>
+                  </form>
+               </div>
+            </div>
          </div>
+      </div>
    </body>
-            <script type="text/javascript">
-          $(function(){
-
-    $(".dropdown-menu li a").click(function(){
-
+   <script>
+      function dismiss(){
+                                                                     function resetForm($form) {
+          $form.find('input:text, input:password, input:file, select, textarea').val('');
+          $form.find('input:radio, input:checkbox')
+               .removeAttr('checked').removeAttr('selected');
+      }
+      
+      
+         resetForm($('#login'));
+         $('#login')
+             .bootstrapValidator('disableSubmitButtons', false)  
+             .bootstrapValidator('resetForm', true);  
+         
+      
+      }
+   </script>
+   <script type="text/javascript">
+      $(function(){
+      
+      $(".dropdown-menu li a").click(function(){
+      
       $(".btn:first-child").text($(this).text());
       $(".btn:first-child").val($(this).text());
-
-   });
-
-});
-      </script>
+      
+      });
+      
+      });
+   </script>
    <script type="text/javascript">
-
-         var SlideWidth = 350;
-         var SlideSpeed = 500;
+      var SlideWidth = 700;
+      var SlideSpeed = 500;
+      
+        function CurrentMargin() {
+     
+           var currentMargin = $("#slider-wrapper").css("margin-left");
+        
          
-           function CurrentMargin() {
-              // get current margin of slider
-              var currentMargin = $("#slider-wrapper").css("margin-left");
-           
-              // first page load, margin will be auto, we need to change this to 0
-              if (currentMargin == "auto") {
-                  currentMargin = 0;
-              }
-           
-              // return the current margin to the function as an integer
-              return parseInt(currentMargin);
+           if (currentMargin == "auto") {
+               currentMargin = 0;
            }
-           
-           function NextSlide() {
-              // get the current margin and subtract the slide width
-              var newMargin = CurrentMargin() - SlideWidth;
-           
-              // slide the wrapper to the left to show the next panel at the set speed. Then set the nav display on completion of animation.
-              $("#slider-wrapper").animate({ marginLeft: newMargin }, SlideSpeed);
-           }
-           
-                       function PreviousSlide() {
-            // get the current margin and subtract the slide width
-            var newMargin = CurrentMargin() + SlideWidth;
+        
+           return parseInt(currentMargin);
+        }
+        
+        function NextSlide() {
          
-            // slide the wrapper to the right to show the previous panel at the set speed. Then set the nav display on completion of animation.
-            $("#slider-wrapper").animate({ marginLeft: newMargin }, SlideSpeed);
-         } 
-
-$(document).ready(function() {
-    $('#registrationForm')
+           var newMargin = CurrentMargin() - SlideWidth;
+        
+           $("#slider-wrapper").animate({ marginLeft: newMargin }, SlideSpeed);
+        }
+        
+                    function PreviousSlide() {
+         var newMargin = CurrentMargin() + SlideWidth;
+      
+         $("#slider-wrapper").animate({ marginLeft: newMargin }, SlideSpeed);
+      } 
+      
+      $(document).ready(function() {
+      $('#registrationForm')
+      .bootstrapValidator({
+         message: 'This value is not valid',
+         feedbackIcons: {
+             valid: 'glyphicon glyphicon-ok',
+             invalid: 'glyphicon glyphicon-remove',
+             validating: 'glyphicon glyphicon-refresh'
+         },
+         fields: {
+             firstname: {
+                                      validators: {
+                     notEmpty: {
+                         message: 'Your first name is required and can\'t be empty'
+                     },
+                     stringLength: {
+                         min: 3,
+                         max: 30,
+                         message: 'Your first name must be more than 3 and less than 30 characters long'
+                     }
+                  }
+                 
+             },
+             lastname: {
+                  validators: {
+                     notEmpty: {
+                         message: 'Your last name is required and can\'t be empty'
+                     },
+                     stringLength: {
+                         min: 3,
+                         max: 30,
+                         message: 'Your last name must be more than 3 and less than 30 characters long'
+                     }
+                  }
+                 
+             },
+             username: {
+                 message: 'Your username is not valid',
+                 validators: {
+                     notEmpty: {
+                         message: 'A username is required and can\'t be empty'
+                     },
+                     stringLength: {
+                         min: 6,
+                         max: 30,
+                         message: 'The username must be more than 6 and less than 30 characters long'
+                     },
+                     regexp: {
+                         regexp: /^[a-zA-Z0-9_\.]+$/,
+                         message: 'The username can only consist of alphabetical, number, dot and underscore'
+                     },
+                     remote:{
+                         threshold: 3,
+                            url: '../Final-Project-S15/php/username.php',
+                            message: 'This name is not available',
+                     }
+                 }
+             },
+             email: {
+                 validators: {
+                     notEmpty: {
+                         message: 'Your email address is required and can\'t be empty'
+                     },
+                     emailAddress: {
+                         message: 'The input is not a valid email address'
+                     }
+                 }
+             },
+             password: {
+                 validators: {
+                     notEmpty: {
+                         message: 'A password is required and can\'t be empty'
+                     },
+                     callback: {
+                     message: 'The password is not valid',
+                     callback: function(value, validator, $field) {
+                         if (value === '') {
+                             return true;
+                         }
+      
+                         // Check the password strength
+                         if (value.length < 8) {
+                             return {
+                                 valid: false,
+                                 message: 'It must be more than 8 characters long'
+                             };
+                         }
+      
+                         // The password doesn't contain any uppercase character
+                         if (value === value.toLowerCase()) {
+                             return {
+                                 valid: false,
+                                 message: 'It must contain at least one upper case character'
+                             };
+                         }
+      
+                         // The password doesn't contain any uppercase character
+                         if (value === value.toUpperCase()) {
+                             return {
+                                 valid: false,
+                                 message: 'It must contain at least one lower case character'
+                             };
+                         }
+      
+                         // The password doesn't contain any digit
+                         if (value.search(/[0-9]/) < 0) {
+                             return {
+                                 valid: false,
+                                 message: 'It must contain at least one digit'
+                             };
+                         }
+      
+                         return true;
+                     }
+                 },
+                      identical: {
+                     field: 'password',
+                     message: 'The password and its confirm are not the same'
+                 }
+                 }
+             }
+         }
+      })
+      .on('success.form.bv', function(e) {
+         e.preventDefault();
+         
+         NextSlide();
+         
+      });
+      });
+   </script>
+   <script>
+      $(document).ready(function() {
+      $('#login')
+        .bootstrapValidator({
+           onkeyup: false,
+           message: 'This value is not valid',
+           feedbackIcons: {
+               valid: 'glyphicon glyphicon-ok',
+               invalid: 'glyphicon glyphicon-remove',
+               validating: 'glyphicon glyphicon-refresh'
+           },
+           fields: {
+               password: {
+                 validators: {
+                     notEmpty: {
+                         message: 'The password is required and can\'t be empty'
+                     },
+                                         remote: {
+                     message: 'The username and/or password is incorrect',
+                     url: '../Final-Project-S15/php/remote.php',
+                     type: 'POST',
+                        data: function(validator, $field, value) {
+                         return {
+                             username: validator.getFieldElements('username').val(),
+                             password: validator.getFieldElements('password').val()
+                         };
+                 }
+             }
+           }
+               }
+               }
+           
+        })
+        .on('success.form.bv', function(e) {
+            e.preventDefault();
+            
+            
+                  $.ajax({
+                  url: "../Final-Project-S15/php/login.php",
+                  type: "POST",
+                  data: $('#login').serialize(),
+                  success: function(response) {
+                  if (response == 1)
+                  {
+                     console.log(response);
+                     window.location.href = "home.php";
+                  }
+                  else
+                  {
+                      console.log(response);
+                  }
+                  
+                  
+                  }
+                  });
+                  
+                  
+                  
+                     $('#login')
+               .bootstrapValidator('disableSubmitButtons', false)  
+               .bootstrapValidator('resetForm', true);   
+                
+               $('#login').modal('hide');
+            
+        });
+      });
+      
+               
+   </script>
+   <script>
+      $(document).ready(function () {
+          change();
+      
+      $('.list-group-item').click(function() {
+          
+          $('.list-group-item').removeClass('active');
+      
+          var $this = $(this);
+          if (!$this.hasClass('active')) {
+              $this.addClass('active');
+          }
+          change();
+          
+      });
+      
+              
+      
+      function change(){
+      var number = $('.active').attr('name');
+          $.ajax({
+                       url: "../Final-Project-S15/php/pickteam.php",
+                       type: "POST",
+                       data: {number: number},
+                       success: function(response) {
+                           var data = JSON.parse(response);
+                       if (data['response'] == 1) {
+                           $('#logo').attr("src", "../Final-Project-S15/images/logos/"+data['logo']+"?");
+                           $('#teamname').text(data['name']);
+                           $('#coach').text("Head Coach: " + data['coach']);
+                           $('#record').text("Record: " + data['wins'] + "-"+ data['losses'] + "-" + data['ties']);
+                           var cap = data['cap'];
+                           cap = ("$" + cap + "").replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+                           $('#overall').text("Team Rating: " + data['overall']);
+                           $('#salary').text("Salary cap: " + cap);
+                       }
+                       else
+                       {
+                          console.log("Response is: " + data['response']);
+                          console.log("Error is: " + data['error']);
+                       }
+                       
+                       
+                       }
+                       });
+      }
+      });
+   </script>
+   <script>
+      $(document).ready(function() {
+      $('#photo')
         .bootstrapValidator({
             message: 'This value is not valid',
             feedbackIcons: {
@@ -161,59 +485,57 @@ $(document).ready(function() {
                 validating: 'glyphicon glyphicon-refresh'
             },
             fields: {
-                username: {
-                    message: 'The username is not valid',
-                    validators: {
-                        notEmpty: {
-                            message: 'The username is required and can\'t be empty'
+         avatar: {
+             validators: {
+                  notEmpty: {
+                            message: 'A file is required and can\'t be empty'
                         },
-                        stringLength: {
-                            min: 6,
-                            max: 30,
-                            message: 'The username must be more than 6 and less than 30 characters long'
-                        },
-                        // remote: {
-                        //     threshold: 6,
-                        //     url: '/Legends-New/PHP/remote.php',
-                        //     delay: 2000,    // Send Ajax request every 2 seconds
-                        //     message: 'The username is not available'
-                        // },
-                        regexp: {
-                            regexp: /^[a-zA-Z0-9_\.]+$/,
-                            message: 'The username can only consist of alphabetical, number, dot and underscore'
-                        }
-                    }
-                },
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The email address is required and can\'t be empty'
-                        },
-                        emailAddress: {
-                            message: 'The input is not a valid email address'
-                        }
-                    }
-                },
-                password: {
-                    validators: {
-                        notEmpty: {
-                            message: 'The password is required and can\'t be empty'
-                        },
-                          stringLength: {
-                            min: 6,
-                            max: 30,
-                            message: 'The password must be more than 6 and less than 30 characters long'
-                        },
-                    }
-                }
+                 file: {
+                     extension: 'jpeg,png',
+                     type: 'image/jpeg,image/png',
+                     maxSize: 2097152,   // 2048 * 1024
+                     message: 'The selected file is not valid'
+                 }
+             }
+         }
             }
         })
         .on('success.form.bv', function(e) {
-            // Prevent form submission
             e.preventDefault();
             
-            NextSlide();
+                 $("#team-name").val($('#teamname').text());  
+                 var form = new FormData($('#photo')[0]);
+                 var second = $("#registrationForm").serializeArray();
+                 
+                 for (var i=0; i<second.length; i++)
+                 {
+                     form.append(second[i].name, second[i].value);
+                 }
+                 
+                  $.ajax({
+                  url: "../Final-Project-S15/php/newProfile.php",
+                  type: "POST",
+                  data: form,
+                  async: false,
+                  success: function(response) {
+                  if (response == 11) {
+                      console.log(response);
+                      window.location.href = "home.php";
+                  }
+                  else
+                  {
+                     console.log(response);
+                  }
+                  
+                  
+                  },
+                  contentType: false,       
+                  cache: false,            
+                  processData:false 
+                  });
+            
         });
-});
-</script>
+      });
+               
+   </script>
 </html>
