@@ -35,3 +35,7 @@ git remote add origin https://github.com/guillaug-osu/assignment4-part1
 git pull remotename branchname
 
 git log --pretty=format:"Start: %nEnd: %ad %nTasks: %s" --date=rfc
+
+git merge master
+git checkout master
+git merge dev
