@@ -45,7 +45,7 @@
                      <ul class="dropdown-menu" role="menu">
                         <li><a href="roster.php">My Team</a></li>
                         <li><a href="#">Transactions</a></li>
-                        <li><a href="freeagents.php">Free Agents</a></li>
+                        <li><a href="#">Free Agents</a></li>
                         <li><a href="#">Trade Players</a></li>
                      </ul>
                   </li>
@@ -83,7 +83,7 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-                 <table class="table" id="roster">
+                 <table class="table" id="freeagent">
                         <thead>
                            <tr>
                               <th>Jersey</th>
@@ -141,7 +141,7 @@
       </div>
             <script>
          $(document).ready(function() {
-             var table = $('#roster').DataTable({
+             var table = $('#freeagent').DataTable({
                  "bLengthChange": true,
                  "paging": true,
                  "serverSide": true,
@@ -149,7 +149,7 @@
                  "ordering": true,
                  "info": true,
                  "ajax": {
-                     "url": "../Final-Project-S15/php/my_team.php",
+                     "url": "../Final-Project-S15/php/free_agents.php",
                      "type": "POST"
                  },
                  "columns": [{
@@ -266,16 +266,7 @@
          
              });
          
-         
-             $('#roster tbody').on('click', 'tr', function() {
-                 if ($(this).hasClass('selected')) {
-                     $(this).removeClass('selected');
-                 }
-                 else {
-                     table.$('tr.selected').removeClass('selected');
-                     $(this).addClass('selected');
-                 }
-             });
+   
          
          });
       </script>

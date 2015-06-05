@@ -1,0 +1,52 @@
+Useful Mysql Commands:
+
+Login: mysql-ctl cli -u root -p
+Select database: use database;
+show tables: SHOW tables;
+describe table contents: DESCRIBE table_content;
+Update table: UPDATE table_name SET field1=new-value1, field2=new-value2
+   
+LOAD DATA LOCAL INFILE 'Clients_list.csv' 
+INTO TABLE clients 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+mysql -u USER -p --local-infile=1 DATABASE
+
+source /home/ubuntu/workspace/convertcsv.sql
+
+CREATE TABLE datatables_demo (
+	id         int NOT NULL,
+	first_name varchar(250) NOT NULL,
+	last_name  varchar(250) NOT NULL,
+	position   varchar(250) NOT NULL,
+	email      varchar(250) NOT NULL,
+	office     varchar(250) NOT NULL,
+	start_date datetime,
+	age        int,
+	salary     int,
+	extn       varchar(8) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+INSERT INTO test (log_date, type, mail_date, time, attachments, matter_number, paralegal_initials) VALUES('2014-11-08', 'FAX', '2014-11-01', '04:39:00', '0', '30020-001001', 'MEC');
+
+
+UPDATE paralegals SET initials='INACTIVE' WHERE first_name='Inactive';
+
+SELECT * FROM mytable INTO OUTFILE '/home/ubuntu/workspace/test.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+
+mysqldump your_database_name > any_file_name.sql
+
+GRANT ALL PRIVILEGES ON *.* TO girgalicious@localhost;
+SHOW VARIABLES LIKE 'socket';
+quit;
+
+source /home/ubuntu/workspace/convertcsv.sql
+
+
+SELECT * FROM mytable INTO OUTFILE '/home/ubuntu/workspace/test.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
+
+source /home/ubuntu/workspace/CS 290/Final-Project-S15/sql/nfl.sql

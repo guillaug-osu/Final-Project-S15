@@ -45,7 +45,7 @@
                      <ul class="dropdown-menu" role="menu">
                         <li><a href="roster.php">My Team</a></li>
                         <li><a href="#">Transactions</a></li>
-                        <li><a href="#">Free Agents</a></li>
+                        <li><a href="freeagents.php">Free Agents</a></li>
                         <li><a href="#">Trade Players</a></li>
                      </ul>
                   </li>

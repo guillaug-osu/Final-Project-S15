@@ -27,7 +27,7 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                  <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                  <li><a href="home.php">Home <span class="sr-only">(current)</span></a></li>
                   <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Team <span class="caret"></span></a>
                      <ul class="dropdown-menu" role="menu">
@@ -42,7 +42,7 @@
                      <ul class="dropdown-menu" role="menu">
                         <li><a href="roster.php">My Team</a></li>
                         <li><a href="#">Transactions</a></li>
-                        <li><a href="#">Free Agents</a></li>
+                        <li><a href="freeagents.php">Free Agents</a></li>
                         <li><a href="#">Trade Players</a></li>
                      </ul>
                   </li>
