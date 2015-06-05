@@ -27,7 +27,7 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">Home <span class="sr-only">(current)</span></a></li>
                   <li class="dropdown">
                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Team <span class="caret"></span></a>
                      <ul class="dropdown-menu" role="menu">
@@ -77,7 +77,43 @@
             </div>
          </div>
       </nav>
-      <div class="container-fluid">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-3">
+                      <?php echo '<img src="../Final-Project-S15/images/profile/'.$_SESSION['SESS_PHOTO'].'?" height=150 width=150 alt="Profile Photo"></img>'; ?>
+                  </div>
+                  <div class="col-md-9">
+                      <h1><?php echo $_SESSION['SESS_FIRST_NAME']; ?> </h1><h1><?php echo $_SESSION['SESS_LAST_NAME']; ?></h1>
+                  </div>
+               </div>
+            </div>
+         </div>
       </div>
+            <nav class="navbar navbar-default">
+         <div class="container-fluid">
+            <div class="navbar-header">
+               <span class="navbar-brand">Fantasy Profile</span>
+            </div>
+            <div>
+               <ul class="nav navbar-nav nav-tab" id="myTab" data-tabs="tabs">
+                  <li role="presentation" class="active"><a href="#overview" data-toggle="tab">Overview<span class="sr-only">(current)</span></a></li>
+                  <li role="presentation"><a href="#leagues" data-toggle="tab">Leagues</a></li>
+                  <li role="presentation"><a href="#medals" data-toggle="tab">Recent Medals</a></li>
+                  <li role="presentation"><a href="#achievements" data-toggle="tab">Achievements</a></li>
+                  <li role="presentation"><a href="#trophies" data-toggle="tab">Trophies</a></li>
+               </ul>
+            </div>
+         </div>
+      </nav>
+               <div class="container-fluid">
+                     <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade in active" id="overview">overview</div>
+            <div class="tab-pane fade in" id="leagues">leagues</div>
+            <div class="tab-pane fade in" id="medals">medals</div>
+            <div class="tab-pane fade in" id="trophies">trophies</div>
+            </div>
+            </div>
    </body>
 </html>

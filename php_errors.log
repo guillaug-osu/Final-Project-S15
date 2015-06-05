@@ -827,3 +827,19 @@
 [02-Jun-2015 20:26:25 UTC] PHP Warning:  main(): Couldn't fetch mysqli in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/newProfile.php on line 47
 [02-Jun-2015 20:29:42 UTC] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'girgalicious'@'localhost' (using password: YES) in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/newProfile.php on line 43
 [02-Jun-2015 20:29:42 UTC] PHP Warning:  main(): Couldn't fetch mysqli in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/newProfile.php on line 47
+[03-Jun-2015 03:53:28 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 03:53:34 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 03:54:22 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 03:54:58 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 03:55:30 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 03:56:07 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 03:56:20 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 04:00:49 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 04:03:12 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 04:15:40 UTC] PHP Notice:  Undefined index: SESS_MY_TEAM in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 103
+[03-Jun-2015 04:44:23 UTC] PHP Warning:  require(ssp.class.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/nfl.php on line 100
+[03-Jun-2015 04:44:23 UTC] PHP Fatal error:  require(): Failed opening required 'ssp.class.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/nfl.php on line 100
+[03-Jun-2015 04:45:57 UTC] PHP Warning:  require(ssp.class.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/nfl.php on line 98
+[03-Jun-2015 04:45:57 UTC] PHP Fatal error:  require(): Failed opening required 'ssp.class.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/nfl.php on line 98
+[03-Jun-2015 04:49:31 UTC] PHP Warning:  require(ssp.class.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/nfl.php on line 98
+[03-Jun-2015 04:49:31 UTC] PHP Fatal error:  require(): Failed opening required 'ssp.class.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/nfl.php on line 98
