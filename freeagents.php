@@ -83,7 +83,7 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-                 <table class="table" id="freeagent">
+                 <table class="table table-striped table-bordered" id="freeagent">
                         <thead>
                            <tr>
                               <th>Jersey</th>
@@ -264,6 +264,16 @@
                //       }
                //  }
          
+             });
+             
+              $('#freeagent tbody').on('click', 'tr', function() {
+                 if ($(this).hasClass('active')) {
+                     $(this).removeClass('active');
+                 }
+                 else {
+                     table.$('tr.active').removeClass('active');
+                     $(this).addClass('active');
+                 }
              });
          
    

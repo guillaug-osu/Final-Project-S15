@@ -83,7 +83,7 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-                 <table class="table" id="roster">
+                 <table class="table table-striped table-bordered" id="roster">
                         <thead>
                            <tr>
                               <th>Jersey</th>
@@ -268,12 +268,12 @@
          
          
              $('#roster tbody').on('click', 'tr', function() {
-                 if ($(this).hasClass('selected')) {
-                     $(this).removeClass('selected');
+                 if ($(this).hasClass('active')) {
+                     $(this).removeClass('active');
                  }
                  else {
-                     table.$('tr.selected').removeClass('selected');
-                     $(this).addClass('selected');
+                     table.$('tr.active').removeClass('active');
+                     $(this).addClass('active');
                  }
              });
          

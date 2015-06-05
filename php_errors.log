@@ -843,3 +843,4 @@
 [03-Jun-2015 04:45:57 UTC] PHP Fatal error:  require(): Failed opening required 'ssp.class.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/nfl.php on line 98
 [03-Jun-2015 04:49:31 UTC] PHP Warning:  require(ssp.class.php): failed to open stream: No such file or directory in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/nfl.php on line 98
 [03-Jun-2015 04:49:31 UTC] PHP Fatal error:  require(): Failed opening required 'ssp.class.php' (include_path='.:/usr/share/php:/usr/share/pear') in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/nfl.php on line 98
+[05-Jun-2015 18:40:58 UTC] PHP Notice:  session_start(): ps_files_cleanup_dir: opendir(/var/lib/php5) failed: Permission denied (13) in /home/ubuntu/workspace/CS 290/Final-Project-S15/php/my_team.php on line 3

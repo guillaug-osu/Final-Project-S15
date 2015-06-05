@@ -10,7 +10,7 @@
       <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/dataTables.bootstrap.css">
       <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/bootstrapValidator.min.css">
       <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/style.css"/>
-      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jquery-1.9.1.min.js"></script> 
+      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jquery-1.11.1.min.js"></script> 
       <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/bootstrap.min.js"></script>
       <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jquery.dataTables.js"></script>
       <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/dataTables.bootstrap.js"></script>
@@ -83,7 +83,7 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-md-12">
-                 <table id="nfl" class="table display">
+                 <table id="nfl" class="table table-striped table-bordered display">
                         <thead>
                            <tr>
                               <th data-toggle="tooltip" data-placement="left" title="Tooltip on left">Jersey</th>
@@ -269,14 +269,13 @@
          
          
              $('#nfl tbody').on('click', 'tr', function() {
-                 if ($(this).hasClass('selected')) {
-                     $(this).removeClass('selected');
+                 if ($(this).hasClass('active')) {
+                     $(this).removeClass('active');
                  }
                  else {
-                     table.$('tr.selected').removeClass('selected');
-                     $(this).addClass('selected');
+                     table.$('tr.active').removeClass('active');
+                     $(this).addClass('active');
                  }
-                 console.log("touch");
              });
          
          });
