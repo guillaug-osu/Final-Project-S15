@@ -6,15 +6,13 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Oregon State Fantasy Sports</title>
-      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/dataTables.bootstrap.css">
-      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/bootstrapValidator.min.css">
-      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/style.css"/>
-      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jquery.js"></script>
-      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/bootstrap.js"></script>
-      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/bootstrapValidator.min.js"></script>
-      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jquery.dataTables.js"></script>
-      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/dataTables.bootstrap.js"></script>
+      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/style.css">
+      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jquery-1.11.1.min.js"></script> 
+      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/bootstrap.min.js"></script> 
+      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jquery.dataTables.min.js"></script> 
+      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/dataTables.bootstrap.js"></script> 
    </head>
    <body>
       <nav class="navbar navbar-default">

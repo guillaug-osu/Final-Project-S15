@@ -39,3 +39,7 @@ git log --pretty=format:"Start: %nEnd: %ad %nTasks: %s" --date=rfc
 git merge master
 git checkout master
 git merge dev
+
+git stash save --keep-index
+
+git stash drop
