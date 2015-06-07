@@ -1,4 +1,21 @@
 Start: 
+End: Sun, 7 Jun 2015 15:36:10 +0000 
+Tasks: Fixed login page and photo uploads. Also restructured league set up to allow users to join same leagues.
+Start: 
+End: Sat, 6 Jun 2015 22:13:09 +0000 
+Tasks: Fixed files within head tag
+Start: 
+End: Sat, 6 Jun 2015 19:53:56 +0000 
+Tasks: Fixed datatables sorting images and deleted unnecesssaryfiles
+Start: 
+End: Fri, 5 Jun 2015 19:07:00 +0000 
+Tasks: Got row selection working on all tables
+Start: 
+End: Fri, 5 Jun 2015 18:07:26 +0000 
+Tasks: Created free agents page, created new folders
+Start: 
+End: Fri, 5 Jun 2015 16:53:59 +0000 
+Start: 
 End: Fri, 5 Jun 2015 16:49:59 +0000 
 Tasks: Created profile page. fixed login page. added unnecessary js and css files.
 Start: 
