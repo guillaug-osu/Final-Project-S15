@@ -1,0 +1,6 @@
+CREATE TABLE league_teams(
+  id INTEGER(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  league_name VARCHAR(250) NOT NULL,
+  team_name VARCHAR(30) NOT NULL,
+  username VARCHAR(30) NOT NULL
+  );

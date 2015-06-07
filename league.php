@@ -60,12 +60,11 @@
                <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Help<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                     <li><a href="#">Test</a></li>
+                     <li><a href="about.php">About</a></li>
                   </ul>
                   </li>
                   <li class="dropdown">
-                     <?php echo '<img src="../Final-Project-S15/images/profile/'.$_SESSION['SESS_PHOTO'].'?" height=50 width=50 alt="Profile Photo" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></img>'; ?>
-                     <ul class="dropdown-menu" role="menu">
+ <?php echo '<img src="../Final-Project-S15/images/profile/'.$_SESSION['SESS_PHOTO'].'?'.$_SESSION['SESS_REVISIONS'].'" height=50 width=50 alt="Profile Photo" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></img>'; ?>                     <ul class="dropdown-menu" role="menu">
                         <li><a href="profile.php">View Profile</a></li>
                         <li><a href="#">Manage Account</a></li>
                         <li><a href="#">Inbox</a></li>
@@ -84,8 +83,8 @@
                  <table id="nfl" class="table table-striped table-bordered display">
                         <thead>
                            <tr>
-                              <th data-toggle="tooltip" data-placement="left" title="Tooltip on left">Jersey</th>
-                              <th>Player Name</th>
+                              <th>#</th>
+                              <th>Name</th>
                               <th>Overall</th>
                               <th>Position</th>
                               <th>Speed</th>
@@ -141,6 +140,7 @@
          $(document).ready(function() {
              var table = $('#nfl').DataTable({
                  "bLengthChange": true,
+           			"dom": 'rtip',
                  "paging": true,
                  "serverSide": true,
                  "scrollX": true,
@@ -249,20 +249,6 @@
                          "data": "THROW_ON_RUN"
                      }
                  ]
-               //  "drawCallback": function(settings) {
-               //       var test = table.column(3).data().sort().unique();
-         
-               //       var i;
-               //       for (i = 0; i < test.length; i++) {
-               //           var data = test[i];
-               //           var option = document.createElement("option");
-               //           option.text = data;
-               //           option.value = data;
-               //           var select = document.getElementById("userInput");
-               //           select.appendChild(option);
-               //       }
-               //  }
-         
              });
          
          
@@ -277,6 +263,15 @@
              });
          
          });
+      </script>
+            <script>
+         $('.menu li a').click(function(e) {
+  var $this = $(this);
+  if (!$this.hasClass('active')) {
+    $this.addClass('active');
+  }
+  e.preventDefault();
+});
       </script>
    </body>
 </html>

@@ -16,7 +16,6 @@
 	} 
 	
     $name = $_SESSION['SESS_USER_NAME'];
-    $team = $_POST['team'];
     
     $extension = new SplFileInfo($_FILES['avatar']['name']);
     $ext = $extension->getExtension();
@@ -26,7 +25,7 @@
     
     $image = $name.".".$ext;
     
-	$sql="UPDATE FROM members SET profile_photo='$image', team='$team' WHERE username='$name';";
+	$sql="UPDATE FROM members SET profile_photo='$image', WHERE username='$name';";
     if($conn->query($sql) === TRUE)
     {
         echo "1";

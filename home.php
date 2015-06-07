@@ -60,12 +60,11 @@
                <ul class="nav navbar-nav navbar-right">
                   <li class="dropdown"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Help<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
-                     <li><a href="#">Test</a></li>
+                     <li><a href="about.php">About</a></li>
                   </ul>
                   </li>
                   <li class="dropdown">
-                     <?php echo '<img src="../Final-Project-S15/images/profile/'.$_SESSION['SESS_PHOTO'].'?" height=50 width=50 alt="Profile Photo" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></img>'; ?>
-                     <ul class="dropdown-menu" role="menu">
+ <?php echo '<img src="../Final-Project-S15/images/profile/'.$_SESSION['SESS_PHOTO'].'?'.$_SESSION['SESS_REVISIONS'].'" height=50 width=50 alt="Profile Photo" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></img>'; ?>                     <ul class="dropdown-menu" role="menu">
                         <li><a href="profile.php">View Profile</a></li>
                         <li><a href="#">Manage Account</a></li>
                         <li><a href="#">Inbox</a></li>
@@ -80,5 +79,14 @@
       </nav>
       <div class="container-fluid">
       </div>
+            <script>
+         $('.menu li a').click(function(e) {
+  var $this = $(this);
+  if (!$this.hasClass('active')) {
+    $this.addClass('active');
+  }
+  e.preventDefault();
+});
+      </script>
    </body>
 </html>

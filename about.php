@@ -7,16 +7,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Oregon State Fantasy Sports</title>
       <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/bootstrap.min.css">
-      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/bootstrapValidator.min.css">
       <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/dataTables.bootstrap.css">
-      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/jasny-bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/style.css">
       <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jquery-1.11.1.min.js"></script> 
       <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/bootstrap.min.js"></script> 
-      <script type="text/javascript" src="../Final-Project-S15/scripts/bootstrapValidator.min.js"></script>
       <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jquery.dataTables.min.js"></script> 
-      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/dataTables.bootstrap.js"></script>
-      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/jasny-bootstrap.min.js"></script>
+      <script type="text/javascript" charset="utf8" src="../Final-Project-S15/scripts/dataTables.bootstrap.js"></script> 
    </head>
    <body>
       <nav class="navbar navbar-default">
@@ -84,51 +80,16 @@
       </nav>
       <div class="container">
          <div class="row">
+                     <div class="col-md-12">
+            <h1 class="page-header font">About Fantasy Sports</h1>
+         </div>
+         <div class="row">
             <div class="col-md-12">
-               <div class="row">
-                  <div class="col-md-6">
-                       <?php echo '<img src="../Final-Project-S15/images/profile/'.$_SESSION['SESS_PHOTO'].'?'.$_SESSION['SESS_REVISIONS'].'" height=150 width=150 alt="Profile Photo"></img>'; ?>
-                  <form enctype="multipart/form-data" id="photo">
-<div class="fileinput fileinput-new" data-provides="fileinput">
-  <span class="btn btn-default btn-file"><span class="fileinput-new">Select file</span><span class="fileinput-exists">Change</span><input type="file" name="avatar"></span>
-  <span class="fileinput-filename"></span>
-  <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
-</div>
-                     <button type="submit"  class="btn btn-primary" id="Upload">Change Photo</button>
-                  </form>
-                  </div>
-                  <div class="col-md-6">
-                      <h1><?php echo $_SESSION['SESS_FIRST_NAME']; ?> </h1><h1><?php echo $_SESSION['SESS_LAST_NAME']; ?></h1>
-                  </div>
-               </div>
-            </div>
+            <p class="lead font">I always wanted to create a fantasy sports website and I'm using the final project for this class for the opportunity to do so.</p>
+         </div>
          </div>
       </div>
-            <nav class="navbar navbar-default">
-         <div class="container-fluid">
-            <div class="navbar-header">
-               <span class="navbar-brand">Fantasy Profile</span>
-            </div>
-            <div>
-               <ul class="nav navbar-nav nav-tab" id="myTab" data-tabs="tabs">
-                  <li role="presentation" class="active"><a href="#overview" data-toggle="tab">Overview<span class="sr-only">(current)</span></a></li>
-                  <li role="presentation"><a href="#leagues" data-toggle="tab">Leagues</a></li>
-                  <li role="presentation"><a href="#medals" data-toggle="tab">Recent Medals</a></li>
-                  <li role="presentation"><a href="#achievements" data-toggle="tab">Achievements</a></li>
-                  <li role="presentation"><a href="#trophies" data-toggle="tab">Trophies</a></li>
-               </ul>
-            </div>
-         </div>
-      </nav>
-               <div class="container-fluid">
-                     <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade in active" id="overview">overview</div>
-            <div class="tab-pane fade in" id="leagues">leagues</div>
-            <div class="tab-pane fade in" id="medals">medals</div>
-            <div class="tab-pane fade in" id="trophies">trophies</div>
-            </div>
-            </div>
-                  <script>
+      <script>
          $('.menu li a').click(function(e) {
   var $this = $(this);
   if (!$this.hasClass('active')) {
@@ -137,61 +98,5 @@
   e.preventDefault();
 });
       </script>
-       <script>
-      $(document).ready(function() {
-      $('#photo')
-        .bootstrapValidator({
-            message: 'This value is not valid',
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-         avatar: {
-             validators: {
-                  notEmpty: {
-                            message: 'A file is required and can\'t be empty'
-                        },
-                 file: {
-                     extension: 'jpeg,png',
-                     type: 'image/jpeg,image/png',
-                     maxSize: 2097152,   // 2048 * 1024
-                     message: 'The selected file is not valid'
-                 }
-             }
-         }
-            }
-        })
-        .on('success.form.bv', function(e) {
-            e.preventDefault();
-
-                 
-                  $.ajax({
-                  url: "../Final-Project-S15/php/addphoto.php",
-                  type: "POST",
-                  data: new FormData(this),
-                  async: false,
-                  success: function(response) {
-                  if (response == 1) {
-                      console.log(response);
-                      location.reload();
-                  }
-                  else
-                  {
-                     console.log(response);
-                  }
-                  
-                  
-                  },
-                  contentType: false,       
-                  cache: false,            
-                  processData:false 
-                  });
-            
-        });
-      });
-               
-   </script>
    </body>
 </html>

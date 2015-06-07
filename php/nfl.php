@@ -1,5 +1,7 @@
 <?php
 
+	session_start();
+
 /*
  * DataTables example server-side processing script.
  *
@@ -19,8 +21,7 @@
  */
 
 // DB table to use
-$table = 'players';
-
+$table = $_SESSION['SESS_LEAGUE'];
 
 // Table's primary key
 $primaryKey = 'Player_ID';

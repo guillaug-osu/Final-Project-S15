@@ -28,8 +28,10 @@
 		$_SESSION['SESS_USER_NAME'] = $member['username'];
 		$_SESSION['SESS_FIRST_NAME'] = $member['first_name'];
 		$_SESSION['SESS_LAST_NAME'] = $member['last_name'];
+		$_SESSION['SESS_LEAGUE'] = $member['league_name'];
 		$_SESSION['SESS_TEAM'] = $member['team'];
 		$_SESSION['SESS_PHOTO'] = $member['profile_photo'];
+		$_SESSION['SESS_REVISIONS'] = $member['revisions'];
 		session_write_close();
 		echo "1";
 	}

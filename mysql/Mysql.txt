@@ -12,6 +12,7 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
+backtick = `
 
 mysql -u USER -p --local-infile=1 DATABASE
 
@@ -50,3 +51,7 @@ source /home/ubuntu/workspace/convertcsv.sql
 SELECT * FROM mytable INTO OUTFILE '/home/ubuntu/workspace/test.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n';
 
 source /home/ubuntu/workspace/CS 290/Final-Project-S15/sql/nfl.sql
+
+mysqldump test t1 t3 t7 > dump.sql;
+
+mysqldump login members > /home/ubuntu/workspace/dump/test.sql;

@@ -5,12 +5,14 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Oregon State Fantasy Sports</title>
-      <link rel="stylesheet" href="../Final-Project-S15/css/bootstrap.min.css">
-      <link rel="stylesheet" href="../Final-Project-S15/css/bootstrapValidator.min.css">
-      <link rel="stylesheet" href="../Final-Project-S15/css/style.css"/>
+      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/bootstrapValidator.min.css">
+      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/bootstrap-select.min.css"/>
+      <link rel="stylesheet" type="text/css" href="../Final-Project-S15/css/style.css"/>
       <script type="text/javascript" src="../Final-Project-S15/scripts/jquery-1.11.1.min.js"></script> 
       <script type="text/javascript" src="../Final-Project-S15/scripts/bootstrap.min.js"></script>
       <script type="text/javascript" src="../Final-Project-S15/scripts/bootstrapValidator.min.js"></script>
+      <script type="text/javascript" src="../Final-Project-S15/scripts/bootstrap-select.js"></script>
    </head>
    <body>
       <div class="container">
@@ -19,10 +21,7 @@
             <div id="slider-wrapper">
                <div class="slide">
                   <h4 style="text-align: center;">Sign Up Today!</h4>
-                  <form id="registrationForm" class="form-horizontal"             data-bv-message="This value is not valid"
-                     data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
-                     data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
-                     data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+                  <form id="registrationForm" class="form-horizontal">
                      <div class="form-group">
                         <label class="col-xs-4 control-label">First name</label>
                         <div class="col-xs-8">
@@ -45,7 +44,9 @@
                         <label class="col-xs-4 control-label">Email address</label>
                         <div class="col-xs-8">
                            <input type="email"  class="form-control" id="email" name="email" placeholder="me@email.com"  data-bv-notempty data-bv-notempty-message="An email address is mandatory"/>
-                           <input type="hidden" class="form-control" id="team-name" name="team" placeholder="team" value=""/>
+                           <input type="hidden" class="form-control" id="team-name" name="team" value=""/>
+                           <input type="hidden" class="form-control" id="join-league" name="join_league" value=""/>
+                           <input type="hidden" class="form-control" id="create-league" name="create_league "value=""/>
                         </div>
                      </div>
                      <div class="form-group">
@@ -69,6 +70,14 @@
                         </div>
                      </div>
                   </form>
+               </div>
+               <div class="slide" id="leagues">
+                  <div class="row">
+                     <div class="col-md-12">
+                     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#join" name="join" value="Join A League">Join A League</button>
+                     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#create" name="create" value="Create A League">Create A League</button>
+                     </div>
+                  </div>
                </div>
                <div class="slide" id="team">
                   <div class="row">
@@ -120,7 +129,7 @@
                         <img src="" class="img-responsive text-center" id="logo" alt="Responsive image" height="200" width="200">
                         <p class="text-center" id="overall"></p>
                         <p class="text-center" id="coach"></p>
-                        <button type="button" class="btn btn-primary" name="finish" onclick="NextSlide()" value="Upload Avatar!">Upload Avatar!</button>
+                        <button type="button" class="btn btn-primary" name="finish" id="next" value="Upload Avatar!">Upload Avatar!</button>
                      </div>
                   </div>
                </div>
@@ -167,6 +176,47 @@
             </div>
          </div>
       </div>
+      <div class="modal fade" id="join" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Join an existing league</h4>
+               </div>
+               <div class="modal-body">
+                  <form enctype="multipart/form-data" id="joinleague">
+                      <div class="form-group">
+                        <label for="select">Pick a League</label>
+                        <select id="select" class="selectpicker form-control" name="leaguenames" title="Choose one of the following leagues:" data-live-search="true" data-live-search-style="begins">
+                        </select>
+                      </div>
+                     <button type="button" class="btn btn-default" data-dismiss="modal" onclick="dismiss()">Close</button>
+                     <button type="submit"  class="btn btn-primary"id="joined">join</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Create a new league</h4>
+               </div>
+               <div class="modal-body">
+                  <form enctype="multipart/form-data" id="createleague" >
+                    <div class="form-group">
+                        <label for="name" value=""></label>
+                        <input type="text" class="form-control" id="createTeam"placeholder="leaguename" data-bv-notempty data-bv-notempty-message="League name required!" name="leaguename">
+                     </div>
+                     <button type="button" class="btn btn-default" data-dismiss="modal" onclick="dismiss()">Close</button>
+                     <button type="submit"  class="btn btn-primary" id="created">Create</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
    </body>
    <script>
       function dismiss(){
@@ -198,6 +248,59 @@
       });
    </script>
    <script type="text/javascript">
+         $(document).ready(function () {
+            
+            $('#next').click(function(){
+               NextSlide();
+            });
+
+          change();
+      
+      $('.list-group-item').click(function() {
+                    var $this = $(this);
+              if(!$this.hasClass('disabled'))
+              {
+             $('.list-group-item').removeClass('active');
+         
+             if (!$this.hasClass('active')) {
+                 $this.addClass('active');
+             }
+             change();
+              }
+          
+      });
+      
+              
+      
+      function change(){
+      var number = $('.active').attr('name');
+          $.ajax({
+                       url: "../Final-Project-S15/php/pickteam.php",
+                       type: "POST",
+                       data: {number: number},
+                       success: function(response) {
+                           var data = JSON.parse(response);
+                       if (data['response'] == 1) {
+                           $('#logo').attr("src", "../Final-Project-S15/images/logos/"+data['logo']+"?");
+                           $('#teamname').text(data['name']);
+                           $('#coach').text("Head Coach: " + data['coach']);
+                           $('#record').text("Record: " + data['wins'] + "-"+ data['losses'] + "-" + data['ties']);
+                           var cap = data['cap'];
+                           cap = ("$" + cap + "").replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+                           $('#overall').text("Team Rating: " + data['overall']);
+                           $('#salary').text("Salary cap: " + cap);
+                       }
+                       else
+                       {
+                          console.log("Response is: " + data['response']);
+                          console.log("Error is: " + data['error']);
+                       }
+                       
+                       
+                       }
+                       });
+      }
+   
       var SlideWidth = 700;
       var SlideSpeed = 500;
       
@@ -352,10 +455,154 @@
       .on('success.form.bv', function(e) {
          e.preventDefault();
          
-         NextSlide();
+            $.ajax({
+               url: "../Final-Project-S15/php/select_items.php",
+               type: "GET",
+               dataType: "json",
+               success: function(response) {
+               if (response['response'] == 1)
+               {
+                  $.each(response['data'], function(key, value) { 
+                     var name = value['league_name'];
+                      $('#select')
+                           .append($("<option></option>")
+                           .attr("value",name)
+                           .text(name)); 
+                  });
+
+                  $('#select').selectpicker('refresh');
+               }
+               else
+               {
+                   console.log(response);
+               }
+                  NextSlide();
+               }
+               });
+      
          
       });
+      
+      
+      
+      
       });
+      
+       $(document).ready(function() {
+      $('#createleague')
+        .bootstrapValidator({
+           onkeyup: false,
+           message: 'This value is not valid',
+           feedbackIcons: {
+               valid: 'glyphicon glyphicon-ok',
+               invalid: 'glyphicon glyphicon-remove',
+               validating: 'glyphicon glyphicon-refresh'
+           },
+           fields: {
+               leaguename: {
+                 validators: {
+                     notEmpty: {
+                         message: 'A league name is required and can\'t be empty'
+                     },
+                                          stringLength: {
+                         min: 3,
+                         max: 30,
+                         message: 'The league name must be more than 3 and less than 30 characters long'
+                     },
+                                         remote: {
+                     message: 'League name is not available',
+                     url: '../Final-Project-S15/php/leaguename.php',
+                     type: 'POST'
+                             }
+                         }
+                     }
+               }
+           
+        })
+        .on('success.form.bv', function(e) {
+            e.preventDefault();
+                 $("#create-league").val($('#createTeam').val()); 
+                  NextSlide();
+                  
+                
+               $('#create').modal('hide');
+            
+        });
+      });
+      
+       $(document).ready(function() {
+      $('#joinleague').find('[name="leaguenames"]')
+            .selectpicker()
+            .change(function(e) {
+                $('#joinleague').bootstrapValidator('revalidateField', 'leaguenames');
+            })
+            .end()
+        .bootstrapValidator({
+           framework: 'bootstrap',
+            excluded: ':disabled',
+           feedbackIcons: {
+               valid: 'glyphicon glyphicon-ok',
+               invalid: 'glyphicon glyphicon-remove',
+               validating: 'glyphicon glyphicon-refresh'
+           },
+           fields: {
+               leaguenames: {
+                 validators: {
+                     notEmpty: {
+                         message: 'Please select a league!'
+                     }
+                 }
+               }
+            }
+           
+        })
+        .on('success.form.bv', function(e) {
+            e.preventDefault();
+            
+            var league = $( "#select" ).val();
+            $.ajax({
+               url: "../Final-Project-S15/php/disable_items.php",
+               type: "POST",
+               data: {league: league},
+               dataType: "json",
+               success: function(response) {
+               if (response['response'] == 1)
+               {
+                  $.each(response['data'], function(key, value) { 
+                   var name = value['team'];
+                   
+                   $('.list-group-item').each(function(){
+                      var string = $(this).text();
+                      if(string === name)
+                      {
+                         $(this).addClass('disabled');
+                         if($(this).hasClass('active'))
+                         {
+                            $(this).removeClass('active');
+                            $(this).next().addClass('active');
+                            change();
+                         }
+                      }
+                   });
+                   
+                  });
+                  
+                  $("#join-league").val($( "#select" ).val());
+                  NextSlide();
+               }
+               else
+               {
+                   console.log(response);
+               }
+               }
+               });
+                
+               $('#join').modal('hide');
+            
+        });
+      });
+         });
+      
    </script>
    <script>
       $(document).ready(function() {
@@ -427,54 +674,6 @@
                
    </script>
    <script>
-      $(document).ready(function () {
-          change();
-      
-      $('.list-group-item').click(function() {
-          
-          $('.list-group-item').removeClass('active');
-      
-          var $this = $(this);
-          if (!$this.hasClass('active')) {
-              $this.addClass('active');
-          }
-          change();
-          
-      });
-      
-              
-      
-      function change(){
-      var number = $('.active').attr('name');
-          $.ajax({
-                       url: "../Final-Project-S15/php/pickteam.php",
-                       type: "POST",
-                       data: {number: number},
-                       success: function(response) {
-                           var data = JSON.parse(response);
-                       if (data['response'] == 1) {
-                           $('#logo').attr("src", "../Final-Project-S15/images/logos/"+data['logo']+"?");
-                           $('#teamname').text(data['name']);
-                           $('#coach').text("Head Coach: " + data['coach']);
-                           $('#record').text("Record: " + data['wins'] + "-"+ data['losses'] + "-" + data['ties']);
-                           var cap = data['cap'];
-                           cap = ("$" + cap + "").replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-                           $('#overall').text("Team Rating: " + data['overall']);
-                           $('#salary').text("Salary cap: " + cap);
-                       }
-                       else
-                       {
-                          console.log("Response is: " + data['response']);
-                          console.log("Error is: " + data['error']);
-                       }
-                       
-                       
-                       }
-                       });
-      }
-      });
-   </script>
-   <script>
       $(document).ready(function() {
       $('#photo')
         .bootstrapValidator({
@@ -518,7 +717,7 @@
                   data: form,
                   async: false,
                   success: function(response) {
-                  if (response == 11) {
+                  if (response == 1111) {
                       console.log(response);
                       window.location.href = "home.php";
                   }
